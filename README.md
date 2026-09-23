@@ -570,6 +570,8 @@ docs: update README
 * **Shubhdeep**
 * **Akhil**
 * **Arsh**
+* **Mitali Gupta**
+* **Harshita** 
 
 \---
 
