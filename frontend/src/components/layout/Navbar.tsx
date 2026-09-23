@@ -17,9 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setCurrentTab }) => 
         
         {/* Brand */}
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => setCurrentTab('dashboard')}>
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-pastel-lavender-main to-pastel-blue-main flex items-center justify-center text-white shadow-soft">
-            <Shield className="w-5 h-5" />
-          </div>
+          <img src="/sentriai-icon.jpg" alt="SentriAI" className="w-10 h-10 rounded-xl shadow-soft object-cover" />
           <div>
             <div className="flex items-center gap-2">
               <span className="font-bold text-lg text-pastel-text tracking-tight">SentriAI</span>

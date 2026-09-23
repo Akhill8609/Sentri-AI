@@ -6,61 +6,61 @@ SentriAI is an AI-powered cybersecurity platform designed to help users **detect
 
 It combines a **React + TypeScript frontend**, **FastAPI backend**, database-backed incident management, and **Microsoft Azure AI / Foundry** integration to provide an intelligent security analysis experience.
 
----
+\---
 
 ## ✨ Features
 
-| Feature | Description |
-| --- | --- |
-| 🔐 **Authentication** | Secure user registration, login, verification and password management |
-| 🤖 **AI Assistant** | Interactive AI-powered security assistance |
-| 📧 **Email Analysis** | Analyze suspicious emails for potential security threats |
-| 💬 **Message Analysis** | Detect suspicious content in messages |
-| 🔗 **URL Analysis** | Analyze potentially malicious URLs |
-| 📁 **File Analysis** | Upload and analyze suspicious files |
-| 🚨 **Incident Management** | Create, track and manage security incidents |
-| 🕵️ **AI Investigation** | Investigate security incidents using the AI agent |
-| 📊 **SOC Dashboard** | Centralized security operations dashboard |
-| 📈 **Threat Trends** | Monitor security activity and threat patterns |
-| 📚 **Knowledge Base** | Security knowledge retrieval using RAG |
-| 📝 **Audit Logs** | Track important security-related activities |
-| ⚠️ **Emergency Compromise** | Report and manage compromised accounts |
-| 👤 **User Management** | Manage platform users and roles |
+|Feature|Description|
+|-|-|
+|🔐 **Authentication**|Secure user registration, login, verification and password management|
+|🤖 **AI Assistant**|Interactive AI-powered security assistance|
+|📧 **Email Analysis**|Analyze suspicious emails for potential security threats|
+|💬 **Message Analysis**|Detect suspicious content in messages|
+|🔗 **URL Analysis**|Analyze potentially malicious URLs|
+|📁 **File Analysis**|Upload and analyze suspicious files|
+|🚨 **Incident Management**|Create, track and manage security incidents|
+|🕵️ **AI Investigation**|Investigate security incidents using the AI agent|
+|📊 **SOC Dashboard**|Centralized security operations dashboard|
+|📈 **Threat Trends**|Monitor security activity and threat patterns|
+|📚 **Knowledge Base**|Security knowledge retrieval using RAG|
+|📝 **Audit Logs**|Track important security-related activities|
+|⚠️ **Emergency Compromise**|Report and manage compromised accounts|
+|👤 **User Management**|Manage platform users and roles|
 
----
+\---
 
 ## 🧰 Tech Stack
 
 ### Frontend
 
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- Lucide React
+* React 18
+* TypeScript
+* Vite
+* Tailwind CSS
+* Lucide React
 
 ### Backend
 
-- Python
-- FastAPI
-- Uvicorn
-- SQLAlchemy
-- Pydantic
-- JWT Authentication
+* Python
+* FastAPI
+* Uvicorn
+* SQLAlchemy
+* Pydantic
+* JWT Authentication
 
 ### Database
 
-- SQLite — default configuration
-- PostgreSQL — supported
+* SQLite — default configuration
+* PostgreSQL — supported
 
-### AI & Security
+### AI \& Security
 
-- Microsoft Azure AI / Foundry
-- OpenAI SDK
-- AI-powered threat analysis
-- RAG-based knowledge retrieval
+* Microsoft Azure AI / Foundry
+* OpenAI SDK
+* AI-powered threat analysis
+* RAG-based knowledge retrieval
 
----
+\---
 
 ## 🏗️ Architecture
 
@@ -95,7 +95,7 @@ It combines a **React + TypeScript frontend**, **FastAPI backend**, database-bac
 └──────────────┘  └──────────────┘
 ```
 
----
+\---
 
 ## 📁 Project Structure
 
@@ -144,7 +144,7 @@ azure-project/
 └── README.md
 ```
 
----
+\---
 
 ## 🚀 Getting Started
 
@@ -152,10 +152,10 @@ azure-project/
 
 Make sure the following are installed:
 
-- **Python 3.10+**
-- **Node.js**
-- **npm**
-- Git
+* **Python 3.10+**
+* **Node.js**
+* **npm**
+* Git
 
 Check your installations:
 
@@ -166,41 +166,41 @@ npm --version
 git --version
 ```
 
-### 1. Clone the Repository
+### 1\. Clone the Repository
 
 ```bash
 git clone https://github.com/ShubhdeepBH/azure-project.git
 cd azure-project
 ```
 
----
+\---
 
 ## ⚙️ Backend Setup
 
 Open a terminal in the project directory.
 
-### 2. Create a Virtual Environment
+### 2\. Create a Virtual Environment
 
 ```powershell
 cd backend
 python -m venv venv
 ```
 
-### 3. Activate the Virtual Environment
+### 3\. Activate the Virtual Environment
 
 **Windows PowerShell:**
 
 ```powershell
-.\venv\Scripts\Activate.ps1
+.\\venv\\Scripts\\Activate.ps1
 ```
 
 If you are using Command Prompt:
 
 ```cmd
-venv\Scripts\activate
+venv\\Scripts\\activate
 ```
 
-### 4. Install Dependencies
+### 4\. Install Dependencies
 
 ```powershell
 pip install -r requirements.txt
@@ -227,7 +227,7 @@ Configure the required values.
 The default setup uses SQLite, so no external database is required:
 
 ```env
-DATABASE_URL="sqlite:///./data/sentri_ai.db"
+DATABASE\_URL="sqlite:///./data/sentri\_ai.db"
 ```
 
 **Azure AI**
@@ -235,8 +235,8 @@ DATABASE_URL="sqlite:///./data/sentri_ai.db"
 For Microsoft Azure AI / Foundry:
 
 ```env
-AZURE_AI_PROJECT_ENDPOINT="your-azure-project-endpoint"
-AZURE_AI_MODEL="gpt-5-mini"
+AZURE\_AI\_PROJECT\_ENDPOINT="your-azure-project-endpoint"
+AZURE\_AI\_MODEL="gpt-5-mini"
 ```
 
 The project endpoint follows this format:
@@ -245,21 +245,21 @@ The project endpoint follows this format:
 https://<resource>.services.ai.azure.com/api/projects/<project-name>
 ```
 
-> **Note:** Do not append `/openai/v1/responses` to the Azure project endpoint.
+> \*\*Note:\*\* Do not append `/openai/v1/responses` to the Azure project endpoint.
 
 **Security**
 
 Set a secure JWT secret:
 
 ```env
-JWT_SECRET="your-secure-secret"
+JWT\_SECRET="your-secure-secret"
 ```
 
 **Email**
 
 If email verification/OTP functionality is required, configure the SMTP settings in `.env`.
 
----
+\---
 
 ## ▶️ Start the Backend
 
@@ -283,9 +283,9 @@ The API will be available at:
 
 Once the backend is running:
 
-- **Swagger UI:** http://127.0.0.1:8000/docs
-- **ReDoc:** http://127.0.0.1:8000/redoc
-- **Health Check:** http://127.0.0.1:8000/health
+* **Swagger UI:** http://127.0.0.1:8000/docs
+* **ReDoc:** http://127.0.0.1:8000/redoc
+* **Health Check:** http://127.0.0.1:8000/health
 
 Expected response:
 
@@ -296,7 +296,7 @@ Expected response:
 }
 ```
 
----
+\---
 
 ## 💻 Frontend Setup
 
@@ -325,10 +325,10 @@ Copy-Item .env.example .env
 The default configuration is:
 
 ```env
-VITE_API_BASE_URL=/api/v1
+VITE\_API\_BASE\_URL=/api/v1
 ```
 
----
+\---
 
 ## ▶️ Start the Frontend
 
@@ -344,7 +344,7 @@ Usually:
 
 Open the URL in your browser.
 
----
+\---
 
 ## 🔄 Running the Full Application
 
@@ -353,15 +353,15 @@ You need **two terminals**.
 **Terminal 1 — Backend**
 
 ```powershell
-cd azure-project\backend
-.\venv\Scripts\Activate.ps1
+cd azure-project\\backend
+.\\venv\\Scripts\\Activate.ps1
 uvicorn app.main:app --reload
 ```
 
 **Terminal 2 — Frontend**
 
 ```powershell
-cd azure-project\frontend
+cd azure-project\\frontend
 npm install
 npm run dev
 ```
@@ -370,21 +370,21 @@ Then open:
 
 **http://localhost:5173**
 
----
+\---
 
 ## 🗄️ Database
 
 SentriAI uses SQLite by default.
 
 ```text
-backend/data/sentri_ai.db
+backend/data/sentri\_ai.db
 ```
 
 The backend automatically initializes the database when it starts and runs the seed process.
 
-No PostgreSQL installation is required for the default local setup. PostgreSQL can be configured through `DATABASE_URL` if required.
+No PostgreSQL installation is required for the default local setup. PostgreSQL can be configured through `DATABASE\_URL` if required.
 
----
+\---
 
 ## 🔌 API Overview
 
@@ -440,7 +440,7 @@ For the complete list of available endpoints, use the Swagger documentation:
 http://127.0.0.1:8000/docs
 ```
 
----
+\---
 
 ## 🧪 Testing
 
@@ -460,10 +460,10 @@ pytest
 Run a specific test:
 
 ```powershell
-pytest tests/test_backend.py
+pytest tests/test\_backend.py
 ```
 
----
+\---
 
 ## 🐛 Troubleshooting
 
@@ -472,7 +472,7 @@ pytest tests/test_backend.py
 Make sure the virtual environment is activated:
 
 ```powershell
-.\venv\Scripts\Activate.ps1
+.\\venv\\Scripts\\Activate.ps1
 ```
 
 Then reinstall dependencies:
@@ -493,23 +493,23 @@ python -m uvicorn app.main:app --reload
 
 Make sure:
 
-- Backend is running on port `8000`
-- Frontend is running on port `5173`
-- `VITE_API_BASE_URL=/api/v1`
-- Backend CORS settings allow the frontend origin
+* Backend is running on port `8000`
+* Frontend is running on port `5173`
+* `VITE\_API\_BASE\_URL=/api/v1`
+* Backend CORS settings allow the frontend origin
 
 ### Azure AI errors
 
 Check your:
 
 ```env
-AZURE_AI_PROJECT_ENDPOINT
-AZURE_AI_MODEL
+AZURE\_AI\_PROJECT\_ENDPOINT
+AZURE\_AI\_MODEL
 ```
 
 Also verify that your Azure deployment/project is active and accessible.
 
----
+\---
 
 ## 🔐 Security
 
@@ -523,16 +523,16 @@ The following files must remain local:
 
 Never commit:
 
-- Azure API keys
-- Access tokens
-- JWT secrets
-- SMTP passwords
-- Database credentials
-- Other private credentials
+* Azure API keys
+* Access tokens
+* JWT secrets
+* SMTP passwords
+* Database credentials
+* Other private credentials
 
 Use the provided `.env.example` files as templates.
 
----
+\---
 
 ## 👥 Team Development
 
@@ -561,39 +561,36 @@ fix: correct Azure AI integration
 docs: update README
 ```
 
----
+\---
 
 ## 👨‍💻 Team
 
 ### SentriAI Development Team
 
-- **Shubhdeep**
-- **Akhil**
-- **Arsh**
+* **Shubhdeep**
+* **Akhil**
+* **Arsh**
 
----
+\---
 
 ## 📚 Project Purpose
 
 SentriAI was developed as an academic project to demonstrate the integration of:
 
-- Modern web development
-- REST APIs
-- Authentication
-- Database management
-- AI-powered security analysis
-- Microsoft Azure AI services
-- Threat and incident management
-- Security operations workflows
+* Modern web development
+* REST APIs
+* Authentication
+* Database management
+* AI-powered security analysis
+* Microsoft Azure AI services
+* Threat and incident management
+* Security operations workflows
 
----
+\---
 
-## ⭐ Repository
-
-**GitHub:** https://github.com/ShubhdeepBH/azure-project
-
----
+\---
 
 <p align="center">
   Built with ❤️ by the SentriAI team
 </p>
+

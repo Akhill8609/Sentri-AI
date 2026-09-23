@@ -58,9 +58,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ setCurrentTab, setAuthFlow
   return (
     <div className="max-w-md mx-auto my-12 p-6 sm:p-8 card-soft bg-white">
       <div className="text-center mb-8">
-        <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-pastel-lavender-main to-pastel-blue-main text-white flex items-center justify-center mx-auto mb-3 shadow-soft">
-          <Shield className="w-7 h-7" />
-        </div>
+        <img src="/sentriai-icon.jpg" alt="SentriAI" className="w-14 h-14 rounded-2xl mx-auto mb-3 shadow-soft object-cover" />
         <h2 className="text-2xl font-bold text-slate-900">Sign in to SentriAI</h2>
         <p className="text-xs text-slate-500 mt-1">Your Intelligent Digital Security Companion</p>
       </div>

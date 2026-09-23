@@ -74,8 +74,8 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({ setCurrentTab, set
 
         {/* Posture Score Pill */}
         <div className="flex items-center gap-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl border border-slate-200/80 shadow-xs flex-shrink-0">
-          <div className="w-12 h-12 rounded-2xl bg-pastel-mint-light text-pastel-mint-text border border-pastel-mint-border flex items-center justify-center font-bold">
-            <ShieldCheck className="w-6 h-6" />
+          <div className="w-12 h-12 rounded-2xl border border-pastel-mint-border flex items-center justify-center overflow-hidden">
+            <img src="/sentriai-icon.jpg" alt="SentriAI" className="w-full h-full object-cover" />
           </div>
           <div>
             <div className="text-[10px] uppercase font-bold text-slate-400">Security Posture</div>

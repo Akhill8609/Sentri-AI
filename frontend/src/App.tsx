@@ -194,7 +194,7 @@ const AppContent: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-pastel-bg text-slate-500 text-xs">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pastel-lavender-main to-pastel-blue-main animate-pulse"></div>
+          <img src="/sentriai-icon.jpg" alt="SentriAI" className="w-12 h-12 rounded-2xl animate-pulse object-cover" />
           <span>Loading SentriAI...</span>
         </div>
       </div>
@@ -338,7 +338,7 @@ const AppContent: React.FC = () => {
       {/* Trust Footer */}
       <footer className="border-t border-pastel-border bg-white/70 py-4 text-center text-xs text-slate-400">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <span>SentriAI • Your Intelligent Digital Security Companion</span>
+          <span className="flex items-center gap-2"><img src="/sentriai-icon.jpg" alt="SentriAI" className="w-5 h-5 rounded object-cover" /> SentriAI • Your Intelligent Digital Security Companion</span>
           <span className="text-[11px] text-slate-400">
             Intelligent AI Agent & Institutional Safety Guidance
           </span>

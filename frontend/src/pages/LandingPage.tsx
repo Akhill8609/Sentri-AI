@@ -14,8 +14,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ setCurrentTab }) => {
       
       {/* Hero Section */}
       <section className="relative pt-10 pb-6 text-center max-w-4xl mx-auto px-4">
+        <img src="/sentriai-logo.jpg" alt="SentriAI" className="w-28 h-28 mx-auto mb-6 rounded-2xl object-cover drop-shadow-lg" />
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pastel-lavender-light border border-pastel-lavender-border text-pastel-lavender-text text-xs font-semibold mb-6 shadow-xs">
-          <Sparkles className="w-3.5 h-3.5 text-pastel-lavender-main" />
+          <img src="/sentriai-icon.jpg" alt="" className="w-4 h-4 rounded-sm object-cover" />
           <span>SENTRIAI • Your Intelligent Digital Security Companion</span>
         </div>
 
