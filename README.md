@@ -1,158 +1,599 @@
-# SentriAI
+# 🛡️ SentriAI
 
-**Your Intelligent Digital Security Companion**
+### Intelligent Digital Security Companion
 
-An autonomous, agentic AI-powered digital security platform designed specifically for **Students** and **Employees** to investigate, understand, and safely neutralize suspicious digital activities (phishing emails, malicious links, fake scholarship alerts, HR scams, password resets, and account compromises).
+SentriAI is an AI-powered cybersecurity platform designed to help users **detect, analyze, investigate, and manage digital security threats** from a centralized interface.
 
----
-
-## 🌟 Core Architecture & Highlights
-
-```
-                          ┌───────────────────────────┐
-                          │   Frontend (React + TS)   │
-                          │ Soft Pastel Design System │
-                          │ Student / Employee / SOC  │
-                          └─────────────┬─────────────┘
-                                        │ REST / JSON
-                                        ▼
-                          ┌───────────────────────────┐
-                          │     FastAPI Backend       │
-                          │ Auth & OTP / RBAC / Audit │
-                          └──────┬─────────────┬──────┘
-                                 │             │
-                    ┌────────────▼──┐       ┌──▼────────────┐
-                    │ SENTRIAI AGENT│       │  RAG ENGINE   │
-                    │  Orchestrator │       │ Document Ingest│
-                    │  Tool Calling │◄─────►│ Chunking/Embed│
-                    │  State Memory │       │ Vector Search │
-                    └──────┬────────┘       └──┬────────────┘
-                           │                   │
-         ┌─────────────────┼───────────────────┼─────────────────┐
-         │                 │                   │                 │
-         ▼                 ▼                   ▼                 ▼
-   12 Agent Tools    Risk Scorer         LLM Service      Database (SQLite/PG)
-   (URL, Email,      (0-100 rubric,      (Gemini/OpenAI/   - Users & OTP Tokens
-    Logs, Playbooks)  Explainable)        SentriAI Engine) - Incidents & Events
-                                                           - Knowledge Chunks
-                                                           - Tool Call Traces
-```
-
-1. **Email OTP Registration & Activation**:
-   - Backend-controlled email OTP registration and activation (no Firebase dependency).
-   - Strict password security validation (8+ characters, uppercase, lowercase, numbers, special characters).
-   - Secure 6-digit OTP dispatched via standard SMTP with 5-minute validity, 5-attempt limit, and 60-second resend cooldown.
-   - Built-in developer sandbox fallback (`dev_otp`) for frictionless local testing and instant automated evaluation.
-
-2. **Calibrated 4-Tier Explainable Risk Engine**:
-   - Standardized non-alarmist assessment bands:
-     - **0–24: LOW** (Likely Benign)
-     - **25–49: MEDIUM** (Potentially Suspicious / Requires Review)
-     - **50–74: HIGH** (Likely Phishing / Possible Social Engineering)
-     - **75–100: CRITICAL** (Critical Threat Attack)
-   - Every score is backed by granular point breakdowns and actionable **"What Should I Do Now?"** steps.
-
-3. **True Tool-Calling AI Agent**:
-   The SentriAI agent orchestrates 12 specialized tools dynamically:
-   - `analyze_message()`: Detects psychological urgency, financial lures, credential prompts.
-   - `analyze_email()`: Evaluates sender spoofing, SPF/DKIM cues, and domain reputation.
-   - `extract_urls()`: Parses links, raw IP addresses, and embedded hostnames.
-   - `analyze_url()`: Detects typosquatting, deceptive subdomains, and risky TLDs (.xyz, .tk, .top).
-   - `search_incident_history()`: Cross-references prior attack waves across campus/workplace.
-   - `search_security_logs()`: SIEM and perimeter telemetry cross-matching.
-   - `calculate_risk()`: Transparent explainable rubric (0–100).
-   - `retrieve_security_knowledge()`: Semantic vector retrieval over institutional advisories.
-   - `retrieve_incident_response_playbook()`: Retrieves emergency step-by-step containment playbooks.
-   - `generate_action_plan()`: Builds prominent **"What Should I Do Now?"** steps.
-   - `create_incident_report()`: Assembles structured investigation case files.
-   - `escalate_incident()`: Priority escalation to human SOC Analyst queue.
-
-4. **Real RAG Pipeline**:
-   - Institutional knowledge documents chunked into overlapping token windows.
-   - Vector embeddings calculated and stored with semantic cosine similarity retrieval.
-   - Admin upload portal allows instant indexing of new policies and guides.
-   - Shows transparent source citations, categories, and relevance rationales.
-
-5. **Soft Pastel Design System**:
-   - Approachable, calm, and trustworthy for students and employees.
-   - Gentle mint, lavender, peach, and sky blue accents on soft white cards.
-   - Completely avoids dark hacker terminal aggression or neon green clichés.
-
-6. **Dual Role & Human-in-the-Loop Operations**:
-   - **Student Mode**: Fake scholarships, bogus internships, exam notice scams, student portal spoofing.
-   - **Employee Mode**: HR benefits scams, IT support password resets, invoice fraud, MFA push bombing.
-   - **SOC Analyst & Admin Center**: Triage queue, tool call execution traces, threat trends, and human-in-the-loop containment simulations (domain block, session revocation, forced password reset).
+It combines a **React + TypeScript frontend**, **FastAPI backend**, database-backed incident management, and **Microsoft Azure AI / Foundry** integration to provide an intelligent security analysis experience.
 
 ---
 
-## 🚀 Quick Setup & Running Locally
+## ✨ Features
+
+| Feature | Description |
+| --- | --- |
+| 🔐 **Authentication** | Secure user registration, login, verification and password management |
+| 🤖 **AI Assistant** | Interactive AI-powered security assistance |
+| 📧 **Email Analysis** | Analyze suspicious emails for potential security threats |
+| 💬 **Message Analysis** | Detect suspicious content in messages |
+| 🔗 **URL Analysis** | Analyze potentially malicious URLs |
+| 📁 **File Analysis** | Upload and analyze suspicious files |
+| 🚨 **Incident Management** | Create, track and manage security incidents |
+| 🕵️ **AI Investigation** | Investigate security incidents using the AI agent |
+| 📊 **SOC Dashboard** | Centralized security operations dashboard |
+| 📈 **Threat Trends** | Monitor security activity and threat patterns |
+| 📚 **Knowledge Base** | Security knowledge retrieval using RAG |
+| 📝 **Audit Logs** | Track important security-related activities |
+| ⚠️ **Emergency Compromise** | Report and manage compromised accounts |
+| 👤 **User Management** | Manage platform users and roles |
+
+---
+
+## 🧰 Tech Stack
+
+### Frontend
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
+
+### Backend
+
+- Python
+- FastAPI
+- Uvicorn
+- SQLAlchemy
+- Pydantic
+- JWT Authentication
+
+### Database
+
+- SQLite — default configuration
+- PostgreSQL — supported
+
+### AI & Security
+
+- Microsoft Azure AI / Foundry
+- OpenAI SDK
+- AI-powered threat analysis
+- RAG-based knowledge retrieval
+
+---
+
+## 🏗️ Architecture
+
+```text
+┌──────────────────────────────┐
+│          Frontend            │
+│      React + TypeScript      │
+│          Vite                │
+└──────────────┬───────────────┘
+               │
+               │ REST API
+               ▼
+┌──────────────────────────────┐
+│           Backend            │
+│          FastAPI             │
+│                               │
+│ ┌────────┐ ┌──────────────┐  │
+│ │ Auth   │ │   Analysis   │  │
+│ ├────────┤ ├──────────────┤  │
+│ │ Agent  │ │  Incidents   │  │
+│ ├────────┤ ├──────────────┤  │
+│ │ Audit  │ │  Dashboard   │  │
+│ └────────┘ └──────────────┘  │
+└──────────────┬───────────────┘
+               │
+        ┌──────┴───────┐
+        │               │
+        ▼               ▼
+┌──────────────┐  ┌──────────────┐
+│   Database   │  │   Azure AI   │
+│ SQLite / PG  │  │   / Foundry  │
+└──────────────┘  └──────────────┘
+```
+
+---
+
+## 📁 Project Structure
+
+```text
+azure-project/
+│
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── agent.py
+│   │   │   ├── analysis.py
+│   │   │   ├── audit.py
+│   │   │   ├── auth.py
+│   │   │   ├── dashboard.py
+│   │   │   ├── incidents.py
+│   │   │   └── knowledge.py
+│   │   │
+│   │   ├── core/
+│   │   ├── models/
+│   │   ├── seed/
+│   │   ├── services/
+│   │   └── main.py
+│   │
+│   ├── data/
+│   ├── tests/
+│   ├── .env.example
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   │
+│   ├── .env.example
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── vite.config.ts
+│   └── tailwind.config.js
+│
+├── .env.example
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.10+
-- Node.js 18+ and npm
 
-### 1. Backend Setup
+Make sure the following are installed:
+
+- **Python 3.10+**
+- **Node.js**
+- **npm**
+- Git
+
+Check your installations:
+
 ```bash
-cd backend
-python -m pip install -r requirements.txt
-# Run full automated test suite:
-python -m pytest tests/test_backend.py -v
-
-# Start backend server (starts on http://127.0.0.1:8000)
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+python --version
+node --version
+npm --version
+git --version
 ```
-*Note: The database automatically initializes and primes seed users, realistic incidents, and knowledge base documents on startup.*
 
-### 2. Frontend Setup
+### 1. Clone the Repository
+
 ```bash
+git clone https://github.com/ShubhdeepBH/azure-project.git
+cd azure-project
+```
+
+---
+
+## ⚙️ Backend Setup
+
+Open a terminal in the project directory.
+
+### 2. Create a Virtual Environment
+
+```powershell
+cd backend
+python -m venv venv
+```
+
+### 3. Activate the Virtual Environment
+
+**Windows PowerShell:**
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+If you are using Command Prompt:
+
+```cmd
+venv\Scripts\activate
+```
+
+### 4. Install Dependencies
+
+```powershell
+pip install -r requirements.txt
+```
+
+### 🔑 Backend Environment Variables
+
+Create the backend environment file:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Your file should be located at:
+
+```text
+backend/.env
+```
+
+Configure the required values.
+
+**Database**
+
+The default setup uses SQLite, so no external database is required:
+
+```env
+DATABASE_URL="sqlite:///./data/sentri_ai.db"
+```
+
+**Azure AI**
+
+For Microsoft Azure AI / Foundry:
+
+```env
+AZURE_AI_PROJECT_ENDPOINT="your-azure-project-endpoint"
+AZURE_AI_MODEL="gpt-5-mini"
+```
+
+The project endpoint follows this format:
+
+```text
+https://<resource>.services.ai.azure.com/api/projects/<project-name>
+```
+
+> **Note:** Do not append `/openai/v1/responses` to the Azure project endpoint.
+
+**Security**
+
+Set a secure JWT secret:
+
+```env
+JWT_SECRET="your-secure-secret"
+```
+
+**Email**
+
+If email verification/OTP functionality is required, configure the SMTP settings in `.env`.
+
+---
+
+## ▶️ Start the Backend
+
+From the `backend` directory:
+
+```powershell
+uvicorn app.main:app --reload
+```
+
+Or:
+
+```powershell
+python -m uvicorn app.main:app --reload
+```
+
+The API will be available at:
+
+**http://127.0.0.1:8000**
+
+### 📖 API Documentation
+
+Once the backend is running:
+
+- **Swagger UI:** http://127.0.0.1:8000/docs
+- **ReDoc:** http://127.0.0.1:8000/redoc
+- **Health Check:** http://127.0.0.1:8000/health
+
+Expected response:
+
+```json
+{
+  "status": "healthy",
+  "service": "SentriAI API"
+}
+```
+
+---
+
+## 💻 Frontend Setup
+
+Open a **new terminal** while keeping the backend running.
+
+From the project root:
+
+```powershell
 cd frontend
+```
+
+### Install Dependencies
+
+```powershell
 npm install
-# Start development server (starts on http://127.0.0.1:5173)
+```
+
+### 🔑 Frontend Environment Variables
+
+Create the frontend `.env`:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+The default configuration is:
+
+```env
+VITE_API_BASE_URL=/api/v1
+```
+
+---
+
+## ▶️ Start the Frontend
+
+```powershell
 npm run dev
 ```
 
----
+Vite will display the development URL.
 
-## 🔑 Demo Accounts (Pre-Seeded)
+Usually:
 
-| Role | Email | Password | Persona |
-| :--- | :--- | :--- | :--- |
-| **Student** | `student@university.edu` | `Password123!` | Alex Rivera (Undergraduate Student) |
-| **Employee** | `employee@company.com` | `Password123!` | Michael Scott (Operations Lead) |
-| **SOC Analyst** | `analyst@sentriai.io` | `Password123!` | Sarah Chen (Tier 2 SOC Analyst) |
-| **Admin** | `admin@sentriai.io` | `Password123!` | Chief Security Administrator |
+**http://localhost:5173**
 
-*(Quick-switch demo buttons are accessible directly in the top navbar and login page for 1-click evaluation).*
+Open the URL in your browser.
 
 ---
 
-## 🎯 Three End-to-End Demo Scenarios
+## 🔄 Running the Full Application
 
-### Scenario 1: ₹50,000 Scholarship Lure (Student Mode)
-- **Input**: *"Congratulations! You have been selected for a ₹50,000 scholarship. Claim your scholarship by logging into this link: http://scholarship-portal.xyz/login within 24 hours."*
-- **Agent Execution**:
-  1. Extracts financial reward lure (+20) and urgency cue (+20).
-  2. Extracts URL `http://scholarship-portal.xyz/login`.
-  3. Inspects domain: detects high-risk `.xyz` TLD and `/login` credential path (+25).
-  4. Retrieves Student Cybersecurity Handbook via RAG.
-  5. Computes transparent risk: **92/100 (CRITICAL)**.
-  6. Generates prominent **"What Should I Do Now?"** action plan.
-  7. Registers case and displays in SOC Analyst Triage Queue.
+You need **two terminals**.
 
-### Scenario 2: Urgent Company Account Disabled Notice (Employee Mode)
-- **Input**: *"From: IT Support <it-support@freemail-alerts.com> | Subject: Action Required: Your company account will be disabled today. Verify your password immediately at https://login-company-portal.top/auth"*
-- **Agent Execution**:
-  1. Detects sender spoofing (freemail posing as corporate IT).
-  2. Evaluates credential solicitation and urgent deactivation threat.
-  3. Retrieves Employee Defense & Playbook guidance.
-  4. Assigns Risk score **88/100 (CRITICAL)**.
-  5. Places incident in SOC Analyst queue for human review.
+**Terminal 1 — Backend**
 
-### Scenario 3: Agentic Emergency Response (Compromise Triage)
-- **Input**: User reports clicking a link and submitting their password.
-- **Agent Execution**:
-  1. Evaluates confirmed credential submission (+35).
-  2. Retrieves Emergency Account Compromise Playbook via RAG.
-  3. Instantly prescribes immediate actions: reset password via official site, revoke active sessions, and check MFA devices.
-  4. Automatically escalates incident to SOC queue.
-  5. Allows SOC Analyst to simulate defensive gateway block and IdP token revocation with one click.
+```powershell
+cd azure-project\backend
+.\venv\Scripts\Activate.ps1
+uvicorn app.main:app --reload
+```
+
+**Terminal 2 — Frontend**
+
+```powershell
+cd azure-project\frontend
+npm install
+npm run dev
+```
+
+Then open:
+
+**http://localhost:5173**
+
+---
+
+## 🗄️ Database
+
+SentriAI uses SQLite by default.
+
+```text
+backend/data/sentri_ai.db
+```
+
+The backend automatically initializes the database when it starts and runs the seed process.
+
+No PostgreSQL installation is required for the default local setup. PostgreSQL can be configured through `DATABASE_URL` if required.
+
+---
+
+## 🔌 API Overview
+
+The backend exposes REST APIs under:
+
+```text
+/api/v1
+```
+
+**Authentication**
+
+```text
+/api/v1/auth
+```
+
+**Security Analysis**
+
+```text
+/api/analyze/email
+/api/analyze/message
+/api/analyze/url
+/api/analyze/file
+/api/analyze/compromise
+```
+
+**AI**
+
+```text
+/api/ai/chat
+/api/ai/investigate
+```
+
+**SOC**
+
+```text
+/api/soc/dashboard
+/api/soc/incidents
+/api/soc/analytics
+```
+
+**Other**
+
+```text
+/api/v1/incidents
+/api/v1/dashboard
+/api/v1/knowledge
+/api/v1/audit
+```
+
+For the complete list of available endpoints, use the Swagger documentation:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+---
+
+## 🧪 Testing
+
+Backend tests are located in:
+
+```text
+backend/tests/
+```
+
+Run all tests:
+
+```powershell
+cd backend
+pytest
+```
+
+Run a specific test:
+
+```powershell
+pytest tests/test_backend.py
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### `ModuleNotFoundError`
+
+Make sure the virtual environment is activated:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+Then reinstall dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+### `uvicorn is not recognized`
+
+Use:
+
+```powershell
+python -m uvicorn app.main:app --reload
+```
+
+### Frontend cannot connect to backend
+
+Make sure:
+
+- Backend is running on port `8000`
+- Frontend is running on port `5173`
+- `VITE_API_BASE_URL=/api/v1`
+- Backend CORS settings allow the frontend origin
+
+### Azure AI errors
+
+Check your:
+
+```env
+AZURE_AI_PROJECT_ENDPOINT
+AZURE_AI_MODEL
+```
+
+Also verify that your Azure deployment/project is active and accessible.
+
+---
+
+## 🔐 Security
+
+**Never commit secrets to GitHub.**
+
+The following files must remain local:
+
+```text
+.env
+```
+
+Never commit:
+
+- Azure API keys
+- Access tokens
+- JWT secrets
+- SMTP passwords
+- Database credentials
+- Other private credentials
+
+Use the provided `.env.example` files as templates.
+
+---
+
+## 👥 Team Development
+
+Before starting work:
+
+```bash
+git pull
+```
+
+After making changes:
+
+```bash
+git status
+git add .
+git commit -m "Describe your changes"
+git push
+```
+
+**Recommended Commit Examples**
+
+```text
+feat: add URL analysis
+fix: resolve authentication issue
+feat: improve SOC dashboard
+fix: correct Azure AI integration
+docs: update README
+```
+
+---
+
+## 👨‍💻 Team
+
+### SentriAI Development Team
+
+- **Shubhdeep**
+- **Akhil**
+- **Arsh**
+
+---
+
+## 📚 Project Purpose
+
+SentriAI was developed as an academic project to demonstrate the integration of:
+
+- Modern web development
+- REST APIs
+- Authentication
+- Database management
+- AI-powered security analysis
+- Microsoft Azure AI services
+- Threat and incident management
+- Security operations workflows
+
+---
+
+## ⭐ Repository
+
+**GitHub:** https://github.com/ShubhdeepBH/azure-project
+
+---
+
+<p align="center">
+  Built with ❤️ by the SentriAI team
+</p>
