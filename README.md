@@ -594,5 +594,5 @@ SentriAI was developed as an academic project to demonstrate the integration of:
 
 <p align="center">
   Built with ❤️ by the SentriAI team
-</p>
+</p>    
 
